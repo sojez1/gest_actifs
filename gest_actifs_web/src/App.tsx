@@ -1,20 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import MenuBar from './routes/MenuBar'
+import { RouterProvider } from 'react-router-dom'
 
-function App() {
-  
+import {router} from '../src/routes/MesRoutes'
+
+
+
+function App() { 
 
   return (
-    <div>
-      <MenuBar/>
+    <RouterProvider router={router}>
+      
 
-    </div>
-    
+    </RouterProvider>    
     
   )
 }
 
 export default App
+
+
+
+
+

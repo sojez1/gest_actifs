@@ -1,2 +1,2 @@
 
-export const domaineName = "localhost:3306";
+export const domaineName:string = "http://localhost:8095";
