@@ -13,24 +13,42 @@ export default function SaisieCompteurs() {
 
     }
 
-    const saveReleveCompteur = ()=>{
+    const saveReleveCompteur = (e: React.FormEvent)=>{
+        e.preventDefault();
         
     }
   
     return (
-    <div>
+    <div className='container mx-4'>
         <h3> Saisie valeur du compteur d'un materiel</h3>
-        <div className='container'>
-            <label>Materiel</label>
-            <input type='text'onBlur={handleMaterielChange}/>
+        
+        <form onSubmit={saveReleveCompteur}>
 
-            <label>valeur compteur</label>
-            <input type='number'/>
-            <label>unite</label>
+            <div >
+            
+            <div className='form-group'>
+                <label>Materiel</label>
+                <input className="form-control" type='text'onBlur={handleMaterielChange} required/>
+            </div>
+            
 
-            <button>Enregistrer</button>
+            <div className='form-group'>
+                <label>valeur compteur</label>
+                <input className="form-control" type='number' required/>
+            </div>
+
+            <div className='form-group'>
+                <label>unite</label>
+
+            </div> 
+
+            <button type='submit' className='btn btn-primary'>Enregistrer</button>
 
         </div>
+
+        </form>
+        
+        
     </div>
   )
 }

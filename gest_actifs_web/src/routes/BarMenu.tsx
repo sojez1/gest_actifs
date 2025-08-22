@@ -4,9 +4,9 @@ import { NavLink, Outlet } from "react-router-dom";
 export default function BarMenu(){
   return <>  
     
-    <header className="fixed-top">
-        <nav>
-            <ul className="nav ">
+    <header>
+        <nav className="navbar fixed-top bg-light">
+            <ul className="nav nav-tabs">
                 <li className="nav-item"><NavLink to="/" className="nav-link">Dashbord</NavLink></li>
 
                 <li className="nav-item"><NavLink to="/categories" className="nav-link">Categorie</NavLink></li>
@@ -14,6 +14,8 @@ export default function BarMenu(){
                 <li className="nav-item"><NavLink to="/saisieCompteur" className="nav-link">Releves Compteur</NavLink></li>
 
                 <li className="nav-item"><NavLink to="/newMateriel" className="nav-link">Nouveau materiel</NavLink></li>
+
+                <li className="nav-item"><NavLink to="/all_materiels" className="nav-link">Liste materiel</NavLink></li>
 
                 
 
@@ -30,7 +32,7 @@ export default function BarMenu(){
         </nav>
     </header>
 
-    <div><Outlet/></div>
+    <div className="sticky-top"><Outlet/></div>
 
   </>
 }

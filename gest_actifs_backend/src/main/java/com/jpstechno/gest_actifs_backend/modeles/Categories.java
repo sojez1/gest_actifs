@@ -4,8 +4,11 @@ import java.util.List;
 
 import org.hibernate.annotations.NaturalId;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -28,7 +31,8 @@ public class Categories {
     @NaturalId
     private String categorieAppelation;
 
-    @OneToMany(mappedBy = "categorie")
+    @OneToMany(mappedBy = "categorie", fetch = FetchType.LAZY)
+    @JsonManagedReference
     private List<Materiels> listeMateriels;
 
 }

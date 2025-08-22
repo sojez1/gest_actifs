@@ -42,12 +42,12 @@ public class MaterielControl {
 
     // materiel API
 
-    @PostMapping("/insert_materiel")
-    public Materiels insertMateriel(@RequestBody Materiels materiel, @RequestBody String unitCompteur) {
-        return mateServ.saveMateriel(materiel, unitCompteur);
+    @PostMapping("/materiels")
+    public Materiels insertMateriel(@RequestBody Materiels materiel) {
+        return mateServ.saveMateriel(materiel);
     }
 
-    @GetMapping("materiels/get_all")
+    @GetMapping("/materiels")
     public List<Materiels> getAllMateriel() {
         return mateServ.listMateriels();
     }

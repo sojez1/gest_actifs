@@ -3,9 +3,10 @@ import BarMenu from "./BarMenu";
 import NoPages from "../pages/NoPages";
 import Dashbord from "../pages/Dashbord";
 import AddMateriel from "../pages/AddMateriel";
-import Categories from "../pages/Categories";
 import AllMateriels from "../pages/AllMateriels";
 import SaisieCompteurs from "../pages/SaisieCompteurs";
+import AddCategorie from "../pages/AddCategorie";
+import Categories from "../pages/Categories";
 
 export const  router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ export const  router = createBrowserRouter([
         {
         path:'newMateriel',
         element: <AddMateriel />
+        },
+        {
+        path:'newCategorie',
+        element: <AddCategorie />
         },
 
       {

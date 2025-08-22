@@ -7,14 +7,18 @@ import com.jpstechno.gest_actifs_backend.modeles.Materiels;
 
 public interface MaterielInterf {
 
-    Materiels saveMateriel(Materiels materiel, String unitCompteur);
+    Materiels saveMateriel(Materiels materiel);
 
-    Materiels updateMateriel(Materiels materiel, long oldMateriel_id);
+    Materiels updateMateriel(Long id, Materiels materiel);
 
     List<Materiels> listMateriels();
 
     void deleteMateriel(Long materiel_id);
 
-    Materiels changerCompteur(Long idMateriel, Compteurs newCompteur);
+    Materiels changerCompteur(Long materiel_id, Compteurs newCompteur);
+
+    Materiels rechercheParCodeInterne(String codeInterne);
+
+    List<Materiels> rechercheParAppelation(String appelation);
 
 }

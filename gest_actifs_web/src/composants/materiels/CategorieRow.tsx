@@ -1,19 +1,16 @@
-import React from 'react'
 
-type maCategorie = {
-    id: number,
-    categorieAppelation: string,
-    listeMateriels: any
-}
+import type { Categories } from "../../constantes/TypeObjects";
+
 
 type categoriemateriel = {
-    categorie: maCategorie;
+    categorie: Categories;
 }
 
 
 export default function CategorieRow({categorie}:categoriemateriel) {
   return (
     <tr key={categorie.id}>
+        
         <td>{categorie.id}</td>
         <td>{categorie.categorieAppelation}</td>
         <td>
