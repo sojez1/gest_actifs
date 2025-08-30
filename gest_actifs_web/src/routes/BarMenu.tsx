@@ -7,7 +7,10 @@ export default function BarMenu(){
     <header>
         <nav className="navbar fixed-top bg-light">
             <ul className="nav nav-tabs">
-                <li className="nav-item"><NavLink to="/" className="nav-link">Dashbord</NavLink></li>
+
+                <li className="nav-item"><NavLink to="/" className="nav-link">Home</NavLink></li>
+
+                <li className="nav-item"><NavLink to="/dashbord" className="nav-link">Dashbord</NavLink></li>
 
                 <li className="nav-item"><NavLink to="/categories" className="nav-link">Categorie</NavLink></li>
 
@@ -16,6 +19,12 @@ export default function BarMenu(){
                 <li className="nav-item"><NavLink to="/newMateriel" className="nav-link">Nouveau materiel</NavLink></li>
 
                 <li className="nav-item"><NavLink to="/all_materiels" className="nav-link">Liste materiel</NavLink></li>
+
+                <li className="nav-item"><NavLink to="/newEmploye" className="nav-link">Ajouter Employe</NavLink></li>
+
+                <li className="nav-item"><NavLink to="/all_employes" className="nav-link">Liste employes</NavLink></li>
+
+                <li className="nav-item"><NavLink to="/loginPage" className="nav-link">Login</NavLink></li>
 
                 
 
@@ -32,7 +41,9 @@ export default function BarMenu(){
         </nav>
     </header>
 
-    <div className="sticky-top"><Outlet/></div>
+    <div className="container" style={{paddingTop: "20px"}}>Alert: Echeance d'enrtretien pour certains materiel. Cliquer pour voir la liste</div>
+
+    <div className="container" style={{paddingTop: "56px"}}><Outlet/></div>
 
   </>
 }

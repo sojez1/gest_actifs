@@ -7,6 +7,9 @@ import AllMateriels from "../pages/AllMateriels";
 import SaisieCompteurs from "../pages/SaisieCompteurs";
 import AddCategorie from "../pages/AddCategorie";
 import Categories from "../pages/Categories";
+import AllEmployes from "../pages/AllEmployes";
+import LoginPage from "../pages/connexion/LoginPage";
+import AddEmploye from "../pages/AddEmploye";
 
 export const  router = createBrowserRouter([
   {
@@ -14,7 +17,9 @@ export const  router = createBrowserRouter([
     element: <BarMenu/>,
     errorElement: <NoPages/>,
     children: [
-      {path:'/', element: <Dashbord/> },
+      {path:'/', element: <LoginPage/> },
+
+     {path:'dashbord', element: <Dashbord/> },
 
       {path:'all_materiels',element: <AllMateriels /> },
 
@@ -35,31 +40,20 @@ export const  router = createBrowserRouter([
         path:'newCategorie',
         element: <AddCategorie />
         },
+        {
+        path:'newEmploye',
+        element: <AddEmploye />
+        },
+        {
+        path:'all_employes',
+        element: <AllEmployes />
+        },
+        {
+        path:'loginPage',
+        element: <LoginPage />
+        }
 
-      {
-        path: 'materiels',
-        element: <AllMateriels/>,
-        children:[
-            {
-                path:'',
-                element: <AllMateriels />
-            },
-            {
-                path:'all_materiels',
-                element: <AllMateriels />
-            },
-            {
-                path:'add_materiel',
-                element: <AddMateriel />
-            },
-            {
-                path:'categorie',
-                element:<Categories/>
-            }      
-            
-        ] // fin children pour routes materiel 
-
-      } // fin routes pour materiels
+      
 
       
       

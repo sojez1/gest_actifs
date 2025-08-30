@@ -1,0 +1,1 @@
+export const token:any = localStorage.getItem("authToken"); // recuperation du token jwt si connecte

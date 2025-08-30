@@ -5,13 +5,17 @@ import java.util.List;
 
 import org.hibernate.annotations.NaturalId;
 
+import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -38,6 +42,7 @@ public class Employes {
     private String prenom;
 
     @Column(nullable = false)
+    @NaturalId(mutable = true)
     private String email;
 
     @Column(length = 15, nullable = false)
@@ -48,9 +53,12 @@ public class Employes {
     private LocalDate hiredDate;
 
     @Column(updatable = false)
-    private LocalDate saveAt;
+    private LocalDate saveAt = LocalDate.now();
 
     @Enumerated(EnumType.STRING)
+    @ElementCollection(targetClass = Roles.class, fetch = FetchType.EAGER)
+    @CollectionTable(name = "employe_roles", joinColumns = @JoinColumn(name = "employe_id"))
+    @Column(name = "roles")
     private List<Roles> role;
 
     private boolean isEmployeActif;

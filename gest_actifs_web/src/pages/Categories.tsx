@@ -3,6 +3,7 @@ import CategorieRow from '../composants/materiels/CategorieRow'
 import {domaineName} from "../constantes/Prefixes";
 import axios from 'axios';
 import type { Categories } from '../constantes/TypeObjects';
+import { token } from '../constantes/Securite';
 
 
 const apiUrl:string = domaineName+"/materiels/categories";
@@ -13,9 +14,8 @@ export default function Categories() {
     
     const loadcategories = async ()=>{
         const donnees = await axios.get(apiUrl,{
-            auth:{
-            username:'user',
-            password:'123456'
+            headers:{
+                Authorization: `Bearer ${token}`
             }
         });
         console.log(donnees.data)

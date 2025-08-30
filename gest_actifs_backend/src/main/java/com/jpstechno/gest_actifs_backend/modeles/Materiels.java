@@ -18,6 +18,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -25,6 +26,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@Builder
 public class Materiels {
 
     @Id
@@ -44,8 +46,10 @@ public class Materiels {
     private Categories categorie;
 
     @OneToMany(mappedBy = "materiel", fetch = FetchType.EAGER)
+    @Builder.Default
     private List<Compteurs> listeCompteurs = new ArrayList<>();
 
+    @Builder.Default
     private LocalDateTime savedAt = LocalDateTime.now();
 
     @OneToMany(mappedBy = "materiel")

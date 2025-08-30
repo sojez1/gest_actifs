@@ -21,7 +21,7 @@ export default function AddMateriel() {
   
   const handleListeCategorie = async ()=>{
     const listecat = await axios.get(apiUrl_categorie);
-    setlisteCategorie(listecat.data.Categories || []);
+    setlisteCategorie(listecat.data);
   }
 
   const handleFormDataChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>)=>{
